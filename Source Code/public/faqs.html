@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Communication Wizard</title>
+<style>
+@font-face {
+ font-family: 'Anurati';
+ src: url("fonts/Anurati-Regular.otf");
+}
+html{
+margin: 0;
+padding: 0;
+}
+body{
+font-family:Bahnschrift Light;
+text-align: center;
+width: 100%;
+margin: 0;
+padding: 0;
+}
+.heading{
+display: flex;
+justify-content: space-between;
+background-color: #404040;
+color: white;
+padding: 1%;
+}
+.topnav {
+background-color: #333;
+overflow: hidden;
+}
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 125%;
+}
+.topnav a:hover {
+background-color: rgb(109, 109, 109);
+color: black;
+}
+.topnav a.active {
+background-color: rgb(72, 73, 72);
+color: white;
+margin-left: 660px;
+margin-top:10px;
+}
+#abc{
+margin-left: 40%;
+}
+.ab{
+margin-top:10px;
+}
+/* .navbar{
+padding: 1%;
+margin-top: 0.7%;
+width: 60%;
+}
+.navbar a{
+text-decoration: none;
+padding: 3%;
+color: white;
+font-size: 110%;
+}
+.navbar a:hover{
+color: grey;
+background-color: #d9d9d9;
+} */
+.faqdetails{
+text-align: left;
+padding: 2%;
+font-size: 150%;
+}
+.faqbox{
+background-color: #4db8ff;
+padding-top: 2%;
+}
+h1.fs{
+font-family: Anurati;
+font-size: 300%;
+color: #003d66;
+}
+.further{
+text-align: left;
+padding-left: 4%;
+padding-bottom: 2%;
+}
+.further h3{
+font-size: 150%;
+}
+.further p{
+font-size: 130%;
+}
+.innovation{
+background-color: black;
+color: white;
+font-size: 200%;
+}
+.main-slideshow-container{
+position: relative;
+background-image: url("img/8.jpg");
+border-radius: 5px;
+}
+
+.heading2 {
+            font-size: 40px;
+            font-family: Brush Script MT;
+            color: #fff;
+            font-weight: 100;
+            position: absolute;
+            padding-bottom: 10px;
+            margin-left: 10px;
+        }
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+        
+        <a class="active" href="index.html" style="margin-left: 35vw;">Home</a>
+        <a class="ab" href="contactus.html">Queries</a>
+
+        <a class="ab" href="FAQs.html">FAQs</a>
+        <a class="ab" href="login.html">Login</a>
+        <a class="ab" href="signup.html">Sign-up</a>
+        <!--<img src="students.jpg" width="1567px" height="720px">-->
+    </div>
+<!-- <div class="heading">
+<div class="logo">
+<img src="img/logo1.PNG">
+</div>
+<div class="navbar">
+<a href="homepage.html">Home</a>
+<a href="aboutus.html">About</a>
+<a href="faqs.html">FAQs</a>
+<a href="books.html">Books</a>
+<a href="qp.html">Question Papers</a>
+<a href="login.html">Login</a>
+<a href="signup.html">Signup</a>
+</div>
+</div> -->
+<div class="faqbox">
+<h1 class="fs">FAQs</h1>
+<div class="faqdetails">
+<ul>
+<li>
+<b>What are the benefits of being a 9 pointer?</b><br>
+Exemption from 75% attendence Criteria and it will also benefit you during
+your Placements.
+</li>
+<hr>
+<li>
+<b>Does this Exemption also include SoftSkills as well as Lab?</b><br>
+Yes, but instead of worrying for this thing, focus on getting a 9 CGPA.
+</li>
+<hr>
+<li>
+<b>Is is mandatory to be part of a Clubs and Chapters?</b><br>
+No, it is totally upto you.But it is better to be atleast in one Club/Chapter.It
+increases your social interaction with fellow students.
+</li>
+<hr>
+<li>
+<b>When does hostel room allotment takes place?</b><br>
+It generally takes place in March end(Winter Semester).
+</li>
+<hr>
+<li>
+<b>On what basis is room alloted and does gpa play any role in it?</b><br>
+Yes, hostel rooms are alloted on the basis of your NCGPA rank which is
+calculated based on your CGPA only.
+</li>
+<hr>
+<li>
+<b>What is FFCS?</b><br>
+It stands for Fully Flexible Credit System. It helps you to build your timetable
+as per your wish and let you choose subjects of your wish too.
+</li>
+<hr>
+<li>
+<b>How to regiser for extra co-curricular activities?</b><br>
+It can be done by logging in to your vtop account and then go to extra cocurricular tab present in the left hand side and you will see the various activities provided by VIT.
+</li>
+<hr>
+<li>
+<b>What is QCM?</b><br>
+It stands for Quality Circle Meeting where you can discuss your problems
+regarding any subject or the faculty with your HOD and School Co-ordinator.
+</li>
+<hr>
+<li>
+<b>Where to go if I have a start-up idea?</b><br>
+VIT has its own start-up incubation center which is located in TT Ground
+Floor. If your idea is good enough they will provide you with funds and all basic requirements.
+</li>
+<hr>
+<!-- <?php
+if(isset($_POST['postbutton'])){
+echo "<li>".$_POST['que']."<li>";
+}
+?> -->
+</ul>
+</div>
+<p style="font-size: 150%;"><b>Post your Questions following:</b></p>
+<div>
+<form method="POST" action="<?php $_PHP_SELF ?>">
+<input type="text" name="que" placeholder="Question">
+<input type="submit" name="postbutton" value="Post">
+</form>
+</div>
+<div class="further">
+<h3>Got some more Queries?</h3>
+<p>Contact us on : +91 7728968988</p>
+<p>Mail us on : communication_wizard@gmail.com</p>
+</div>
+</div>
+<div class="main-slideshow-container">
+<div class="innovation">
+<p>BEYOND IMAGINATION, OUR INNOVATION</p>
+</div>
+<div class="footer">
+<p>&copy 2021</p>
+</div>
+</div>
+</body>
+</html>

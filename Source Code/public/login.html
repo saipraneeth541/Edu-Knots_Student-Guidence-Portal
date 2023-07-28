@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <style>
+        input.ng-invalid.ng-dirty {
+            border-bottom: 2px solid red;
+        }
+    </style>
+
+    <style>
+        body {
+            background: #FFEFBA;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        
+        #container {
+            border: 1px solid grey;
+            border-radius: 9px;
+            margin-top: 60px;
+            background-color: white;
+            margin-left: 30%;
+            width: 500px;
+            height: 600px;
+        }
+        
+        .head {
+            background-color: #3399ff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px 5px 0px 0px;
+            width: 498.5px;
+            margin-left: -0px;
+        }
+        
+        .head1 {
+            text-align: center;
+            padding: 2px;
+            border-radius: 5px 5px 5px 5px;
+            width: 498.5px;
+            margin-left: -0px;
+        }
+        
+        .head2 {
+            text-align: center;
+            padding: 2px;
+            border-radius: 5px 5px 5px 5px;
+            width: 498.5px;
+            margin-left: -0px;
+        }
+        
+        .btn-outline-primary {
+            width: 150px;
+            border-radius: 17px;
+        }
+        
+        #facebook {
+            border-radius: 50%;
+            border-style: none;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYtRPe525X9mcmlj1NP1QZAdP7m8ToSpPtKixUMRsqMLOylom6yGyI3VdcJn-7AzSdk3s&usqp=CAU");
+            background-size: 100% 100%;
+            background-position: center;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+        }
+        
+        #gplus {
+            border-radius: 50%;
+            background-color: #f2f2f2;
+            border-style: none;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoiSavWIPyLl74rokUc9N47Ucir-rZIQj6Dw&usqp=CAU");
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        
+        #linkedin {
+            border-radius: 50%;
+            background-color: #f2f2f2;
+            border-style: none;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            background-image: url("https://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png");
+            background-size: 100% 100%;
+            background-position: center;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>login</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="head">
+            <h1>Sign-In</h1>
+        </div><br>
+        <form name="form1" ng-app="myApp" ng-controller="validateCtrl" novalidate method="post" action="/loginup">
+            <div class="md-form">
+
+                <p>User name:<span style="color:red">*</span><br>
+                    <input type="text" name="username" class="head1" ng-model="username" required placeholder="Enter your registered User name">
+                    <br><span style="color:red" ng-show="form1.username.$dirty && form1.username.$invalid">
+<span ng-show="form1.username.$error.required">This field is required...!</span>
+                    <span ng-show="form1.username.$error.email">Please enter a valid User name...!</span>
+                    </span>
+                </p>
+
+            </div>
+            <div class="md-form">
+                <p>Password<span style="color:red">*</span><br><input type="password" name="password" class="head2" ng-model="password" required placeholder=" Enter your password">
+                    <br><span style="color:red" ng-show="form1.password.$dirty && form1.password.$invalid">
+<span ng-show="form1.password.$error.required">This field is required...!</span>
+                    </span>
+                </p>
+            </div><br>
+
+            <center><input type="checkbox">&nbspRemember Me<br />
+                <a href="#">Forgot Password?</a></center><br>
+            <center>
+                <input type="submit" value="Sign-in" class="btn-outline-primary" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||
+myForm.email.$dirty && myForm.email.$invalid" name="submit" id="submit">
+            </center><br>
+            <center>
+                <p>Not a member? <a href="signup.html">Register</a></p>
+            </center>
+            <center>
+                <p>or sign in with:</p>
+            </center>
+            <center>
+                <button id="facebook"><i class="fafa-facebook"></i></button>
+                <button id="gplus"><i class="fafa-google-plus"></i></button>
+                <button id="linkedin"><i class="fafa-linkedin"></i></button>
+            </center>
+        </form>
+
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('validateCtrl', function($scope) {});
+    </script>
+</body>
+
+</html>

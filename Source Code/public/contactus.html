@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>contact</title>
+
+    <style>
+        body {
+            background: #FFEFBA;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        
+        .container {
+            border: 1px solid grey;
+            border-radius: 9px;
+            margin-top: 60px;
+            background-color: white;
+            width: 500px;
+            height: 600px;
+        }
+        
+        .head {
+            background-color: #3399ff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px 5px 0px 0px;
+            width: 498.5px;
+            margin-left: -15px;
+        }
+        
+        .btn-outline-primary {
+            width: 250px;
+            border-radius: 17px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <form method="post" action="/query" id="frm">
+            <div class="head">
+                <h1>Message your Query</h1>
+            </div>
+            <br><br><br>
+            <div class="md-form">
+                <input type="name" id="form1" class="form-control" placeholder="name" name="Name">
+            </div>
+            <br>
+            <div class="md-form">
+                <input type="email" id="form1" class="form-control" placeholder="email" name="email">
+            </div><br>
+            <div class="md-form">
+                <textarea name="message" id="form1" cols="57" rows="3" placeholder="message" name="message"></textarea>
+            </div><br>
+            <center><input type="checkbox">&nbsp&nbspSend me a copy of this message <br><br>
+
+                <center>
+                    <p>
+                        <h4>Note:</h4>We will respond to your query at the email address provided above.</p>
+                </center>
+
+                <center><button type="button" type="submit" class="btnbtn-outline-primary" onclick="submitmess()">Send</button></center><br>
+        </form>
+    </div>
+    <script>
+        function submitmess() {
+            var frm = document.getElementById("frm");
+            frm.submit();
+        }
+    </script>
+
+</body>
+
+</html>

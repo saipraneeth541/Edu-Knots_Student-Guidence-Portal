@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"
+></script>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>signup</title>
+
+<style>
+body{
+background: #FFEFBA; /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.container{
+border:1px solid grey;
+border-radius: 9px;
+margin-top: 40px;
+background-color: white;
+width: 500px;
+height: 820px;
+}
+.head{
+background-color: #3399ff;
+color: white;
+text-align: center;
+padding: 10px;
+border-radius: 5px 5px 0px 0px;
+width: 498.5px;
+margin-left:-15px;
+}
+.btn-outline-primary{
+width: 150px;
+border-radius: 17px;
+}
+#facebook{
+border-radius: 50%;
+background-color: #f2f2f2;
+border-style: none;
+padding:10px;
+width: 60px;
+height:60px;
+
+background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYtRPe525X9mcmlj1NP1QZAdP7m8ToSpPtKixUMRsqMLOylom6yGyI3VdcJn-7AzSdk3s&usqp=CAU");
+background-size: 100% 100%;
+background-position: center;
+}
+#gplus{
+border-radius: 50%;
+background-color: #f2f2f2;
+border-style: none;
+padding:10px;
+width: 60px;
+height:60px;
+background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoiSavWIPyLl74rokUc9N47Ucir-rZIQj6Dw&usqp=CAU");
+background-size: 100% 100%;
+background-position: center;
+
+}
+#linkedin{
+background-image:url("https://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png");
+background-size: 100% 100%;
+background-position: center;
+border-radius: 50%;
+background-color: #f2f2f2;
+border-style: none;
+padding:10px;
+width: 60px;
+height:60px;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container" ng-app="myApp" ng-controller="myctrl">
+<div class="head"><h1>Sign-Up</h1></div>
+<br><br><br>
+
+<form name="myForm" action="/signup" method="post" >
+
+<div class="md-form">
+<input type="text" id="form1" class="form-control" placeholder="Name" name="name" ng-model="name" id="name">
+</div><br>
+
+<div class="md-form">
+<input type="text" id="form1" class="form-control" placeholder="Reg. No:" name="reg" ng-model="reg" id="reg">
+</div>
+<br>
+
+<div class="md-form">
+<input type="email" id="form1" class="form-control" placeholder="Email" name="email" ng-model="email" id="email">
+</div>
+<br>
+
+<div class="md-form">
+<input type="text" id="form1" class="form-control" placeholder="User name:" name="username" ng-model="username" id="username">
+</div>
+<br>
+
+<div class="md-form">
+<input type="password" id="form1" class="form-control" placeholder="Password" name="password" ng-model="password">
+</div><br>
+
+<div class="md-form">
+<input type="text" id="form1" class="form-control" placeholder="Branch" name="branch" ng-model="branch">
+</div><br>
+
+<center><input type="checkbox">&nbsp&nbspSubscribe to our newsletter<br>
+<br><center><input type="submit" class="btn-outline-primary" value="Sign-up" ng-click="checkValidationOnClick()"></center><br>
+<center><p>or sign in with:</p></center><br>
+<center><button id="facebook"><i class="fafa-facebook"></i></button>
+<button id="gplus"><i class="fafa-google-plus"></i></button>
+<button id="linkedin"><i class="fafa-linkedin"></i></button>
+</center>
+<hr>
+<p>By clicking Sign up you agree to our <a href="#">terms of service</a></p>
+</div>
+</form>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myctrl", function ($scope) {
+$scope.name = "";
+$scope.reg = "";
+$scope.email = "";
+$scope.username = "";
+$scope.password = "";
+$scope.branch = "";
+$scope.checkValidationOnClick = function () {
+var flag = 0;
+if ($scope.name == "" || $scope.reg == "" || $scope.email == "" || $scope.username == "" || 
+$scope.password == "" || $scope.branch == "")
+{
+alert("All fields are mandatory and have to be entered");
+return false;
+flag = 1;
+}
+var letters = /^[a-zA-Z_]*$/;
+if (!$scope.name.match(letters)) {
+alert("Name fields should contain only alphabets");
+return false;
+flag = 1;
+}
+
+var reg = /^[a-zA-Z_0-9]*$/;
+if (!$scope.reg.match(reg)) {
+alert("Register number should be valid");
+return false;
+flag = 1;
+}
+
+var username = /^[a-zA-Z_0-9]*$/;
+if (!$scope.username.match(username)) {
+alert("User name should be valid");
+return false;
+flag = 1;
+}
+
+var passid = /^[a-zA-Z_0-9]*$/;
+if (!$scope.password.match(passid)) {
+alert("password should be valid");
+return false;
+flag = 1;
+}
+
+var check = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+if (!$scope.email.match(check)) {
+alert("Enter valid email id");
+return false;
+flag = 1;
+}
+
+var alpha = /^[a-zA-Z]*$/;
+if (!$scope.branch.match(alpha)) {
+alert("ENter a valid branch field");
+return false;
+flag = 1;
+}
+}
+})
+</script>
+
+</body>
+</html>
